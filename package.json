@@ -1,0 +1,26 @@
+{
+  "name": "ecommerce-web-application",
+  "version": "1.0.0",
+  "description": "E-commerce Web Application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/youssefA9/Ecommerce-Web-Application.git"
+  },
+  "author": "Youssef Ahmed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/youssefA9/Ecommerce-Web-Application/issues"
+  },
+  "homepage": "https://github.com/youssefA9/Ecommerce-Web-Application#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
