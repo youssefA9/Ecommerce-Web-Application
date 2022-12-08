@@ -25,19 +25,14 @@ body {
 
 .logo {
   position: absolute;
+  margin: auto;
   left: 50%;
-  margin-left: -100px;
+  right: auto;
+  align-items: center;
   width: auto;
   height: 40px;
 }
 
-.construction-image {
-  display: block;
-  padding-top: 10%;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
 
 .nav-icons a {
   float: left;
@@ -55,7 +50,7 @@ body {
 }
 
 /* Add an active class to highlight the current page */
-.topnav .nav-icons a.active {
+.topnav a.active {
   background-color: #047bc0;
   color: white;
 }

@@ -1,19 +1,24 @@
 <div class="topnav" id="myTopnav">
   <div class="nav-icons">
-    <a href="/" class="<%= path === '/' ? 'active' : '' %>">
-      <i class="material-symbols-outlined"> home </i>
+    <a href="/" class="<%= path === '/' ? 'active' : '' %>" title="Home">
+      <span class="material-symbols-outlined"> home </span>
     </a>
-    <a href="news" class="<%= path === '/news' ? 'active' : '' %>">News</a>
+    <!-- <a href="news" class="<%= path === '/news' ? 'active' : '' %>">News</a>
     <a href="contact" class="<%= path === '/contact' ? 'active' : '' %>"
       >Contact</a
     >
-    <a href="about" class="<%= path === '/about' ? 'active' : '' %>">About</a>
+    <a href="about" class="<%= path === '/about' ? 'active' : '' %>">About</a> -->
   </div>
 
   <img src="images/cart_logo.png" class="logo" alt="logo" />
 
   <div class="auth-icons">
-    <a href="#Login">Login</a>
-    <a href="#register">Register</a>
+    <a href="login" class="<%= path === '/login' ? 'active' : '' %>" title="<%= logged ? 'Logout' : 'Profile' %>">
+      <% if(logged){%>
+      <span class="material-symbols-outlined"> logout </span>
+      <%} else { %>
+      <span class="material-symbols-outlined"> person </span>
+      <%}%>
+    </a>
   </div>
 </div>
