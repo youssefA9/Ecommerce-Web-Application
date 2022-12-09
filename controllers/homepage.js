@@ -1,8 +1,16 @@
 const path = require("path");
 const User = require("../models/user");
+const Product = require("../models/product");
 
 exports.viewHomepage = (req, res) => {
-  res.render("homepage", { path: "/", logged: false });
+  Product.fetchAll((products) => {
+    res.render("homepage", {
+      path: "/",
+      logged: false,
+      prods: products,
+      pageTitle: "All Products",
+    });
+  });
 };
 
 exports.viewLoginPage = (req, res) => {
