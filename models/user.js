@@ -1,21 +1,24 @@
 const fs = require("fs");
 const path = require("path");
 
+const p = path.join(
+  path.dirname(process.mainModule.filename),
+  "data",
+  "users.json"
+);
+
 function readUsersFile(cb) {
-  fs.readFile(
-    path.join(__dirname, "..", "data", "users.json"),
-    (err, content) => {
-      if (err) {
-        cb([]);
-      } else {
-        try {
-          cb(JSON.parse(content));
-        } catch (err) {
-          console.log(err);
-        }
+  fs.readFile(p, (err, content) => {
+    if (err) {
+      cb([]);
+    } else {
+      try {
+        cb(JSON.parse(content));
+      } catch (err) {
+        console.log(err);
       }
     }
-  );
+  });
 }
 
 module.exports = class User {
@@ -28,21 +31,15 @@ module.exports = class User {
     readUsersFile((users) => {
       if (!users.find((user) => user.email === this.email)) {
         users.push(this);
-        fs.writeFile(
-          path.join(__dirname, "..", "data", "users.json"),
-          JSON.stringify(users),
-          (err) => {
-            console.log(err);
-          }
-        );
+        fs.writeFile(p, JSON.stringify(users), (err) => {
+          console.log(err);
+        });
       }
     });
   }
 
   static getUser(currentUser) {
-    let content = fs.readFileSync(
-      path.join(__dirname, "..", "data", "users.json")
-    );
+    let content = fs.readFileSync(p);
 
     let users = JSON.parse(content);
 

@@ -5,10 +5,8 @@ const homepageController = require("../controllers/homepage.js");
 
 router.get("/", homepageController.viewHomepage);
 
-router.get("/login", homepageController.viewLoginPage);
-
 router.post("/login-user", homepageController.login);
 
-router.post("/add-user", homepageController.addUser);
+router.post("/register-user", homepageController.addUser);
 
 module.exports = router;

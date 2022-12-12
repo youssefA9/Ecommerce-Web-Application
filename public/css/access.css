@@ -4,11 +4,18 @@
   box-sizing: border-box;
 }
 
-body {
+#login-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
   margin: 0;
   font-family: Roboto, -apple-system, "Helvetica Neue", "Segoe UI", Arial,
     sans-serif;
-  background: rgba(133, 132, 132, 1);
+  background: rgba(82, 82, 82, 0.9);
+  z-index: 50;
 }
 
 .forms-section {

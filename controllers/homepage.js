@@ -13,10 +13,6 @@ exports.viewHomepage = (req, res) => {
   });
 };
 
-exports.viewLoginPage = (req, res) => {
-  res.render("login", { path: "/login", logged: false });
-};
-
 exports.addUser = (req, res) => {
   const user = new User(req.body.email, req.body.password);
   user.addUser(this);

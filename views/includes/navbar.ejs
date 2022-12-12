@@ -13,15 +13,13 @@
   <img src="images/cart_logo.png" class="logo" alt="logo" />
 
   <div class="auth-icons">
-    <a href="login" class="<%= path === '/login' ? 'active' : '' %>" title="<%= logged ? 'Logout' : 'Profile' %>">
-      <% if(logged){%>
-      <span class="material-symbols-outlined"> logout </span>
-      <%} else { %>
+    <a id="profile-button" onclick="showAccessScreen()" title="Profile">
       <span class="material-symbols-outlined"> person </span>
-      <%}%>
     </a>
+
+    <a id="exit-button" onclick="showAccessScreen()" title="Exit">
+      <span class="material-symbols-outlined"> logout </span>
+    </a>
+
   </div>
 </div>
-
-
-
