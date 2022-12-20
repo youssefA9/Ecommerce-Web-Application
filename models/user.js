@@ -7,7 +7,7 @@ const p = path.join(
   "users.json"
 );
 
-function readUsersFile(cb) {
+function getUsersFromFile(cb) {
   fs.readFile(p, (err, content) => {
     if (err) {
       cb([]);
@@ -27,8 +27,8 @@ module.exports = class User {
     this.password = password;
   }
 
-  addUser() {
-    readUsersFile((users) => {
+  save() {
+    getUsersFromFile((users) => {
       if (!users.find((user) => user.email === this.email)) {
         users.push(this);
         fs.writeFile(p, JSON.stringify(users), (err) => {

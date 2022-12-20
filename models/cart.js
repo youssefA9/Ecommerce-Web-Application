@@ -1,0 +1,33 @@
+const fs = require("fs");
+const path = require("path");
+
+const p = path.join(
+  path.dirname(process.mainModule.filename),
+  "data",
+  "cart.json"
+);
+
+function getProductsFromFile(cb) {
+  fs.readFile(p, (err, content) => {
+    if (err) {
+      cb([]);
+    } else {
+      try {
+        cb(JSON.parse(content));
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  });
+}
+
+module.exports = class cart {
+  static addProduct(prod) {
+    getProductsFromFile((products) => {
+      products.push(prod);
+      fs.writeFile(p, JSON.stringify(products), (err) => {
+        console.log(err);
+      });
+    });
+  }
+};
