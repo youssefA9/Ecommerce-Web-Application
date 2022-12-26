@@ -32,7 +32,9 @@ module.exports = class User {
       if (!users.find((user) => user.email === this.email)) {
         users.push(this);
         fs.writeFile(p, JSON.stringify(users), (err) => {
-          console.log(err);
+          if (err) {
+            console.log(err);
+          }
         });
       }
     });

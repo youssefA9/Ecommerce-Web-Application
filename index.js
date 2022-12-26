@@ -14,7 +14,11 @@ const mainRoute = require("./routes/main");
 app.use(mainRoute);
 
 app.use("/", (req, res) => {
-  res.render("error");
+  res.render("pages/error", {
+    path: "",
+    logged: false,
+    pageTitle: "All Products",
+  });
 });
 
 app.listen(3000);

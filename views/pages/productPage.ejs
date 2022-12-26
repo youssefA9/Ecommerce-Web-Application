@@ -1,0 +1,44 @@
+<%- include('../includes/header.ejs') %>
+  <%- include('../includes/navbarSheets.ejs') %>
+    <%- include('../includes/accessSheets.ejs') %>
+      <link rel="stylesheet" href="/css/main.css" />
+      <link rel="stylesheet" href="/css/product-productpage.css" />
+      </head>
+
+      <body id="body">
+        <%- include('../includes/navbar.ejs') %>
+          <%- include('../includes/profileModal.ejs') %>
+
+
+            <main id="main">
+              <script type="module" src="/javascript/productPageScript.js"></script>
+              <div class="product">
+                <div class="product-img">
+                  <img id="image" src="<%= prod.imageUrl %>" alt="">
+                </div>
+                <div class="product-listing">
+                  <div class="content">
+                    <h1 class="name">
+                      <%= prod.title %>
+                    </h1>
+                    <p class="info">
+                      <%= prod.description %>
+                    </p>
+                    <p class="price">
+                      <%= prod.price%>$
+                    </p>
+                    <div class="btn-and-rating-box">
+                      <button class="btn">buy now</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </main>
+
+
+            <script src="/javascript/navbarScript.js"></script>
+
+
+      </body>
+
+      </html>

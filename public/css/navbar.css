@@ -10,7 +10,6 @@
   background-color: #333;
   height: fit-content;
   z-index: 100;
-  /* overflow: hidden; */
 }
 
 /* Style the links inside the navigation bar */
@@ -33,6 +32,10 @@
   align-items: center;
   width: auto;
   height: 40px;
+}
+
+.topnav #cart-button{
+  display: none;
 }
 
 /* Align the nav icons at the left */
@@ -62,10 +65,6 @@
   color: white;
 }
 
-/* Hide the link that should open and close the topnav on small screens */
-.topnav .icon {
-  display: none;
-}
 
 /* Prevent the Hovering effect on the mobile devices */
 @media (hover: hover) and (pointer: fine) {

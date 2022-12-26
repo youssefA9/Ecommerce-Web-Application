@@ -5,7 +5,7 @@ const Cart = require("../models/cart");
 
 exports.viewHomepage = (req, res) => {
   Product.fetchAll((products) => {
-    res.render("homepage", {
+    res.render("pages/homepage", {
       path: "/",
       logged: false,
       prods: products,
@@ -23,7 +23,7 @@ exports.addUser = (req, res) => {
 exports.login = (req, res) => {
   const user = new User(req.body.emaild, req.body.passwordd);
   Product.fetchAll((products) => {
-    res.render("homepage", {
+    res.render("pages/homepage", {
       path: "/",
       logged: User.getUser(user),
       prods: products,
@@ -32,10 +32,11 @@ exports.login = (req, res) => {
   });
 };
 
+
 exports.viewProductPage = (req, res) => {
   const prodId = req.params.productId;
   Product.findById(prodId, (product) => {
-    res.render("productPage", {
+    res.render("pages/productPage", {
       path: "",
       prod: product,
       logged: false,
@@ -49,4 +50,5 @@ exports.addProductToCart = (req, res) => {
   Product.findById(prodId, (product) => {
     Cart.addProduct(product);
   });
+  res.status(200);
 };

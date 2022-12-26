@@ -25,8 +25,14 @@ module.exports = class cart {
   static addProduct(prod) {
     getProductsFromFile((products) => {
       products.push(prod);
+
+      //TODO
+      //Bug in this function accross the models
       fs.writeFile(p, JSON.stringify(products), (err) => {
-        console.log(err);
+        if (err) {
+          // there was an error
+          console.log(err);
+        }
       });
     });
   }

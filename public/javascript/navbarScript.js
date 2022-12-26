@@ -1,3 +1,4 @@
+
 const switchers = [...document.querySelectorAll(".switcher")];
 
 switchers.forEach((item) => {
@@ -24,3 +25,31 @@ function showAccessScreen() {
     document.querySelector("body").style.overflowY = "hidden";
   }
 }
+
+function showCartIcon(){
+  const element = document.querySelector("#cart-button");
+
+  element.style.display = "flex";
+}
+
+function addToCart(event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const productId = $(form).find("[name=productId]").val();
+  const actionURL = form.action;
+
+  $.ajax({
+    type: "POST",
+    url: actionURL,
+    data: { productId },
+    success: function (data) {},
+  });
+}
+
+
+$(document).ready(function () {
+  if (!$.browser.webkit) {
+      $('.wrapper').html('<p>Sorry! Non webkit users. :(</p>');
+  }
+});
